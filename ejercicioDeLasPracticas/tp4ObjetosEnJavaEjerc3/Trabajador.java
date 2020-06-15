@@ -2,7 +2,7 @@ package tp4ObjetosEnJavaEjerc3;
 
 import java.util.ArrayList;
 
-import tp4ObjetosEnJavaEjer1y2.Producto;
+
 
 public class Trabajador {
 
