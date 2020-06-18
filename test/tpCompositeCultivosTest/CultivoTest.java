@@ -1,4 +1,4 @@
-package tpCompositeTest;
+package tpCompositeCultivosTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import TpComposite.Cultivo;
-import TpComposite.CultivoMixto;
-import TpComposite.CultivoSoja;
-import TpComposite.CultivoTrigo;
+import TpCompositeCultivos.Cultivo;
+import TpCompositeCultivos.CultivoMixto;
+import TpCompositeCultivos.CultivoSoja;
+import TpCompositeCultivos.CultivoTrigo;
 
 class CultivoTest {
 
