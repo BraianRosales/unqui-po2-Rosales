@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public interface IShapeshifte {
 	
-	
-
 	public IShapeshifte compose(IShapeshifte shapeshifte);
 	
 	public int deepest();

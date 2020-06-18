@@ -6,6 +6,7 @@ public class ShapeshifteComposite implements IShapeshifte{
 
 	//PROPIEDADES
 	
+	private ArrayList<Integer> listaDeElementos;
 	private ArrayList<IShapeshifte> listaDeIshapeshifte;
 	
 	
@@ -13,7 +14,7 @@ public class ShapeshifteComposite implements IShapeshifte{
 	
 	public ShapeshifteComposite() {
 		
-
+		this.listaDeElementos = new ArrayList<Integer>();
 		this.listaDeIshapeshifte = new ArrayList<IShapeshifte>();
 		
 	}
@@ -32,14 +33,14 @@ public class ShapeshifteComposite implements IShapeshifte{
 	}
 
 
-
-
 	//OVERRIDE.
 	
 	@Override
-	public IShapeshifte compose(IShapeshifte shapeshifte) {
+	public IShapeshifte compose(IShapeshifte Ishapeshifte) {
 		
-		this.listaDeIshapeshifte.add(shapeshifte);
+		this.listaDeIshapeshifte.add(Ishapeshifte);
+		this.setListaDeIshapeshifte(listaDeIshapeshifte);
+		
 		return this;
 	}
 
