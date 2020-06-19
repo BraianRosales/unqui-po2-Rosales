@@ -24,19 +24,42 @@ class ShapeshifterTest {
 	}
 
 	@Test
-	void test() {
+	void testDelShapeshifteCompuestoDelResultadoDeAComposeBTieneDosElementos() {
+		
 		a.getListaDeElementos().add(1);
 		b.getListaDeElementos().add(2);
 		
 		c = (ShapeshifteComposite)a.compose(b);
+	
+		assertEquals(c.getListaDeIshapeshifte().size(),2);
+		
+	}
+
+	@Test
+	void testDelShapeshifteCompuestoPorAyPorBTieneDosElementos(){
+		
+		a.getListaDeElementos().add(1);
+		b.getListaDeElementos().add(2);
+		
 		c2 = new ShapeshifteComposite();
 		
 		c2.compose(a);
 		c2.compose(b);
 	
 		assertEquals(c2.getListaDeIshapeshifte().size(),2);
-		assertEquals(c.getListaDeIshapeshifte().size(),2);
+			}
+	
+	@Test
+	void testCantidadDeElementosDelCompositoCEsIgualALaCantidadDeElemntosDeC2(){
+		
+		a.getListaDeElementos().add(1);
+		b.getListaDeElementos().add(2);
+		c = (ShapeshifteComposite)a.compose(b);
+		
+		c2 = new ShapeshifteComposite();
+		c2.compose(a);
+		c2.compose(b);
+		
 		assertEquals(c.getListaDeIshapeshifte(),c2.getListaDeIshapeshifte());
 	}
-
 }
