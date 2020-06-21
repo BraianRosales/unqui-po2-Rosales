@@ -13,4 +13,6 @@ public interface IShapeshifte {
 	public IShapeshifte flat();
 	
 	public ArrayList<Integer> values();
+
+	public boolean isComposite();
 }

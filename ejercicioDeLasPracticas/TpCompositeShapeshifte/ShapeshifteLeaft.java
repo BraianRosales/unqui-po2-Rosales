@@ -33,15 +33,25 @@ public class ShapeshifteLeaft implements IShapeshifte{
 	@Override
 	public IShapeshifte flat() {
 		
-		return null;
+		
+		
+		return this;
 	}
+	
+	
 
 	@Override
 	public ArrayList<Integer> values() {
-		
-		return null;
+
+		ArrayList<Integer> nuevaLista = new ArrayList<Integer>();
+	
+		nuevaLista.addAll(listaDeElementos);
+		return nuevaLista;
 	}
 
+	
+	
+	
 
 	public ArrayList<Integer> getListaDeElementos() {
 		return listaDeElementos;
@@ -50,6 +60,15 @@ public class ShapeshifteLeaft implements IShapeshifte{
 	public void setListaDeElementos(ArrayList<Integer> listaDeElementos) {
 		this.listaDeElementos = listaDeElementos;
 	}
+
+
+	@Override
+	public boolean isComposite() {
+		
+		return false;
+	}
+	
+	
 
 	
 }
