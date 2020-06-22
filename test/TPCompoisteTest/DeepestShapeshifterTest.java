@@ -1,16 +1,15 @@
-package tpCompositeShapeshifteTest;
+package TPCompoisteTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 import TpCompositeShapeshifte.ShapeshifteComposite;
 import TpCompositeShapeshifte.ShapeshifteLeaft;
 
-
-
-class FlatIshapeshifterTest {
+class DeepestShapeshifterTest {
 
 	ShapeshifteLeaft a;
 	ShapeshifteLeaft b;
@@ -23,26 +22,53 @@ class FlatIshapeshifterTest {
 	ShapeshifteComposite z2;
 	ShapeshifteComposite e;
 	ShapeshifteComposite e2;
-	ShapeshifteComposite f; 
-	ShapeshifteComposite g;
+	ShapeshifteComposite f;
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		
 		this.a = new ShapeshifteLeaft();
 		this.b = new ShapeshifteLeaft();
 		this.a2 = new ShapeshifteLeaft();
 		this.b2 = new ShapeshifteLeaft();
 		this.d = new ShapeshifteLeaft();
 	}
-
-	@Test
-	void testFlatDeAEsIgualaA() {
-		
-		assertEquals(a.flat(),a);
-	}
 	
 	@Test
-	void testFlatDeFEsIgualAG() {
+	void testDeepestAEsIgualACero() {
+		
+		a.getListaDeElementos().add(1);
+		
+		assertEquals(a.deepest(),0);
+	} 
+
+	@Test
+	void testDeepestCEsIgualAUno() {
+		
+		a.getListaDeElementos().add(1);
+		b.getListaDeElementos().add(2);
+		d.getListaDeElementos().add(3);
+		
+		c = (ShapeshifteComposite)a.compose(b);
+		
+		assertEquals(c.deepest(),1);
+	} 
+	
+	@Test
+	void testDeepestZEsIgualADos() {
+		
+		a.getListaDeElementos().add(1);
+		b.getListaDeElementos().add(2);
+		d.getListaDeElementos().add(3);
+		
+		c = (ShapeshifteComposite)a.compose(b);
+		z = (ShapeshifteComposite)d.compose(c);
+		
+		assertEquals(z.deepest(),2);
+	} 
+	
+	@Test
+	void testDeepestFEsIgualATres() {
 		
 		a.getListaDeElementos().add(1);
 		b.getListaDeElementos().add(2);
@@ -55,8 +81,13 @@ class FlatIshapeshifterTest {
 		e = (ShapeshifteComposite)a2.compose(b2);
 		f = (ShapeshifteComposite)z.compose(e);
 		
-		f.flat();
-		assertEquals(f.getListaDeIshapeshifte().size(),5);
+		assertEquals(f.deepest(),3);
+		
 	}
 
 }
+
+
+
+
+

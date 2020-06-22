@@ -1,15 +1,14 @@
-package tpCompositeShapeshifteTest;
+package TPCompoisteTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 import TpCompositeShapeshifte.ShapeshifteComposite;
 import TpCompositeShapeshifte.ShapeshifteLeaft;
 
-class DeepestShapeshifterTest {
+class ValuesIshapeshifteTest {
 
 	ShapeshifteLeaft a;
 	ShapeshifteLeaft b;
@@ -22,7 +21,8 @@ class DeepestShapeshifterTest {
 	ShapeshifteComposite z2;
 	ShapeshifteComposite e;
 	ShapeshifteComposite e2;
-	ShapeshifteComposite f;
+	ShapeshifteComposite f; 
+	ShapeshifteComposite g;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -33,42 +33,35 @@ class DeepestShapeshifterTest {
 		this.b2 = new ShapeshifteLeaft();
 		this.d = new ShapeshifteLeaft();
 	}
-	
-	@Test
-	void testDeepestAEsIgualACero() {
-		
-		a.getListaDeElementos().add(1);
-		
-		assertEquals(a.deepest(),0);
-	} 
 
-	@Test
-	void testDeepestCEsIgualAUno() {
-		
-		a.getListaDeElementos().add(1);
-		b.getListaDeElementos().add(2);
-		d.getListaDeElementos().add(3);
-		
-		c = (ShapeshifteComposite)a.compose(b);
-		
-		assertEquals(c.deepest(),1);
-	} 
 	
 	@Test
-	void testDeepestZEsIgualADos() {
+	void testValuesDeAEsIgualAUno() {
+		
+		a.getListaDeElementos().add(1);
+		
+		assertEquals(a.values().size(),1);
+		
+	}
+	
+	
+	@Test
+	void testValuesDeZEsIgualATres() {
 		
 		a.getListaDeElementos().add(1);
 		b.getListaDeElementos().add(2);
 		d.getListaDeElementos().add(3);
+		
 		
 		c = (ShapeshifteComposite)a.compose(b);
 		z = (ShapeshifteComposite)d.compose(c);
 		
-		assertEquals(z.deepest(),2);
-	} 
+		assertEquals(z.values().size(),3);
+		
+	}
 	
 	@Test
-	void testDeepestFEsIgualATres() {
+	void testValuesDeFEsIgualACinco() {
 		
 		a.getListaDeElementos().add(1);
 		b.getListaDeElementos().add(2);
@@ -81,11 +74,14 @@ class DeepestShapeshifterTest {
 		e = (ShapeshifteComposite)a2.compose(b2);
 		f = (ShapeshifteComposite)z.compose(e);
 		
-		assertEquals(f.deepest(),3);
+		assertEquals(f.values().size(),5);
 		
 	}
 
 }
+
+
+
 
 
 

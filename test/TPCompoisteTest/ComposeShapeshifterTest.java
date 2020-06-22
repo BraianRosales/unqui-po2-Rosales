@@ -1,4 +1,4 @@
-package tpCompositeShapeshifteTest;
+package TPCompoisteTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
